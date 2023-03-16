@@ -12,6 +12,15 @@ function money_calc() {
   let number_of_person = +document.getElementById("person").value;
   let tip = +document.getElementById("tips").value;
 
+  let before_tax_block = document.getElementById("before-tax");
+  let percentage_tip_block = document.getElementById("percentage-tip");
+  let prov_tax_block = document.getElementById("prov-tax");
+  let fed_tax_block = document.getElementById("fed-tax");
+  let total_with_tax_block = document.getElementById("total-with-tax");
+  let total_tip_block = document.getElementById("total-tip");
+  let pay_person_block = document.getElementById("pay-person");
+  let error_message_block = document.getElementById("error");
+
   if (number_of_person > 0 && price_meal > 0) {
     let total_before_tax =
       number_of_person * price_meal + number_of_person * price_meal * tip;
@@ -22,29 +31,23 @@ function money_calc() {
     let total_tip = number_of_person * price_meal * tip;
     let pay_person = total_with_tax / number_of_person;
 
-    document.getElementById("before-tax").textContent =
-      formatter.format(total_before_tax);
-    document.getElementById("percentage-tip").textContent = `${per_tip}%`;
-    document.getElementById("prov-tax").textContent =
-      formatter.format(prov_tax);
-    document.getElementById("fed-tax").textContent = formatter.format(fed_tax);
-    document.getElementById("total-with-tax").textContent =
-      formatter.format(total_with_tax);
-    document.getElementById("total-tip").textContent =
-      formatter.format(total_tip);
-    document.getElementById("pay-person").textContent =
-      formatter.format(pay_person);
-    document.getElementById("error").innerHTML = "";
+    before_tax_block.textContent = formatter.format(total_before_tax);
+    percentage_tip_block.textContent = `${per_tip}%`;
+    prov_tax_block.textContent = formatter.format(prov_tax);
+    fed_tax_block.textContent = formatter.format(fed_tax);
+    total_with_tax_block.textContent = formatter.format(total_with_tax);
+    total_tip_block.textContent = formatter.format(total_tip);
+    pay_person_block.textContent = formatter.format(pay_person);
+    error_message_block.innerHTML = "";
   } else {
-    document.getElementById("error").innerHTML =
+    error_message_block.innerHTML =
       "The numbers of persons or the price of the meal should be positive number.";
-    document.getElementById("before-tax").textContent = "";
-    document.getElementById("percentage-tip").textContent = "";
-    document.getElementById("prov-tax").textContent = "";
-    document.getElementById("fed-tax").textContent = "";
-    document.getElementById("total-with-tax").textContent = "";
-    document.getElementById("total-tip").textContent = "";
-    document.getElementById("pay-person").textContent = "";
-    document.getElementById("pay-person").textContent = "";
+    before_tax_block.textContent = "";
+    percentage_tip_block.textContent = "";
+    prov_tax_block.textContent = "";
+    fed_tax_block.textContent = "";
+    total_with_tax_block.textContent = "";
+    total_tip_block.textContent = "";
+    pay_person_block.textContent = "";
   }
 }
