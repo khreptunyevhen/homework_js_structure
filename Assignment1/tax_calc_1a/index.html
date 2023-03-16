@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <h1 class="mb-5 mt-5 text-center">Tax calculator</h1>
+        <div class="mb-5">
+            <div class="row mb-3">
+                <label class="col-sm-4" for="person">Enter number of person:</label>
+                <input class="col-sm-1" type="number" id="person" name="person">
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-4" for="price-meal">Enter price of the meal:</label>
+                <input class="col-sm-1" type="number" id="price-meal" name="price-meal">
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-4" for="tips">Choose the amount tips:</label>
+                <select class="col-sm-1" name="tips" id="tips">
+                    <option value="0.2">20%</option>
+                    <option value="0.15">15%</option>
+                    <option value="0.1">10%</option>
+                    <option value="0">0%</option>
+                </select>
+            </div>
+            <button onclick="money_calc()" class="btn btn-primary">Calculate</button>
+        </div>    
+        <div class="result-block">
+            <p id="error" class="text-warning fw-bold"></p>
+            <p>The total price before tax: <span class="fw-bold" id="before-tax"></span></p>
+            <p>The tip percentage determined: <span class="fw-bold" id="percentage-tip"></span></p>
+            <p>The amount of provincial tax: <span class="fw-bold" id="prov-tax"></span></p>
+            <p>The amount of federal tax: <span class="fw-bold" id="fed-tax"></span></p>
+            <p>The total with tax: <span class="fw-bold" id="total-with-tax"></span></p>
+            <p>The total tip: <span class="fw-bold" id="total-tip"></span></p>
+            <p>The total amount to pay per person: <span class="fw-bold" id="pay-person"></span></p>
+        </div>        
+    </div>
+    <script src="./script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js" integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>
