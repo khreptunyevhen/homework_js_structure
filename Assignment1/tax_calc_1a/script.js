@@ -25,8 +25,8 @@ function money_calc() {
     let total_before_tax =
       number_of_person * price_meal + number_of_person * price_meal * tip;
     let per_tip = tip * 100;
-    let prov_tax = total_before_tax * PROV_TAX;
-    let fed_tax = total_before_tax * FED_TAX;
+    let prov_tax = number_of_person * price_meal * PROV_TAX;
+    let fed_tax = number_of_person * price_meal * FED_TAX;
     let total_with_tax = total_before_tax + prov_tax + fed_tax;
     let total_tip = number_of_person * price_meal * tip;
     let pay_person = total_with_tax / number_of_person;
