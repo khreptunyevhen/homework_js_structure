@@ -7,8 +7,6 @@ function find_duplicates(array) {
     (num, index) => array.indexOf(num) !== index
   );
 
-  console.log(array_duplicates);
-
   if (array_duplicates.length !== 0) {
     let output_set = new Set(array_duplicates);
     const output = Array.from(output_set);
